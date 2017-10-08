@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa de ubicacion UDB</title>
+    <style >
+    * {
+      margin: 0;
+      padding: 0; 
+      align-content: center;
+    }
+    #map{
+      height: 500px;
+      width: 100%;
+    }
+  </style>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  </head>
+  <body>
+    
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Mapa</li>
+          </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1>Universidad Don Bosco</h1>
+        <h2 class="subheader">Mapa de ubicacion de campus</h2>
+      </div>
+    </div>
+    
+    <!-- We can now combine rows and columns when there's only one column in that row -->
+    <div class="row medium-8 large-7 columns">
+      <div class="blog-post">
+        <h3>Mapa <small>Actualizado 7 de Octubre 2017</small></h3>
+        
+        <p>
+          <div id="map"></div>
+
+            <script>
+              function initMap(){
+              var location = {lat:13.698554, lng:-89.188213};
+              var udb1 = {lat:13.715360, lng:-89.153538};
+              var udb2 = {lat:13.673587, lng:-89.236772};
+              var map = new google.maps.Map(document.getElementById("map"), { zoom: 12, center: location});
+
+              var marker = new google.maps.Marker({
+              position: udb1,
+              map: map,
+              icon: "icono.png"
+              });
+
+              var marker2 = new google.maps.Marker({
+              position: udb2,
+              map: map,
+              icon: "icono.png"
+               });
+              }
+  
+            </script>
+        </p>
+        <div class="callout">
+          <ul class="menu simple">
+            <li><a href="#">Autor: Marco Castillo</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLmWn9HUmMCYCO6OTdZgx-kpr4MBhj3XA&callback=initMap"></script>
+  </body>
+</html>
+
+
+    
